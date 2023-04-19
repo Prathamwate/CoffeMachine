@@ -9,7 +9,7 @@ public class MakeLatte {
     HashMap<Ingredient,Integer> latteCoffee=new HashMap<>();
 	CoffeeMachine coffeeMachine=new CoffeeMachine();
 	
-	public  MakeLatte() {
+	public MakeLatte() {
 		latteCoffee.put(Ingredient.Milk,75);
 		latteCoffee.put(Ingredient.Water,350);
 		latteCoffee.put(Ingredient.Beans,20);

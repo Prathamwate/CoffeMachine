@@ -1,15 +1,19 @@
 package CoffeeMachine;
 
 
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Map.Entry;
 
 public class Print {
 	int coffeeCount=0;
 	int money=0;
-	CoffeeMachine coffeeMachine=new CoffeeMachine();
+	CoffeeMachine coffeeMachine=new CoffeeMachine("Pratam");
+	
 	Prices prices=new Prices();
     Scanner scanner=new Scanner(System.in);
     String type="";
+    
 	public void display() {
 		System.out.println("----Welcome to CoffeeMachine----");
 		System.out.println(CoffeeType.Cappuccino +" "+"10$");
@@ -47,7 +51,7 @@ public class Print {
 	}
 	
 	public void printbill(CoffeeType coffeeType){
-		System.out.print("Coffee Bill :" );
+		System.out.println("Coffee Bill :" );
 		System.out.println("Coffee :" +coffeeType);
 		System.out.println("Bill :" +prices.getPricesHashMap(coffeeType));
 		System.out.println("Thank You Visit Again!");
@@ -61,6 +65,9 @@ public class Print {
 	public void analysis() {
 		System.out.println("Coffee Sale : " +coffeeCount);
 		System.out.println("Money Earned :" +money);
+		System.out.println("Milk Remainning :" + coffeeMachine.getQuantity(Ingredient.Milk));
+		System.out.println("Water Remainning :" + coffeeMachine.getQuantity(Ingredient.Water));
+		System.out.println("Benas Remainning :" + coffeeMachine.getQuantity(Ingredient.Beans));
 		display();
 	}
 
